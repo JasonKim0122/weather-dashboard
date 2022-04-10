@@ -16,6 +16,12 @@ body {
     padding: 0;
 }
 
+header {
+    border-bottom: 2px solid var(--tertiary-color);
+    font-size: 25px;
+    font-weight: bold;
+}
+
 .main {
     display: flex;
     align-items: center;
@@ -28,6 +34,7 @@ body {
 
 #search-body {
     background-color: rgb(235, 230, 230);
+    border: 2px solid var(--tertiary-color)
 }
 .recent {
     padding: 20px;
@@ -66,6 +73,7 @@ body {
 
 .forecast {
     justify-content: space-around;
+    border: 2px solid var(--tertiary-color);
 }
 
 #forecast-info {
