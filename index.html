@@ -21,10 +21,11 @@
                 <!-- Search -->
                 <div class="search field has-addons">
                     <div class="control">
+                        <label for="search-input"></label>
                         <input class="input" id="search-input" type="text" placeholder="Search for a City">
                     </div>
                     <div class="control">
-                        <a class="button is-info" id="search-btn">Search</a>
+                        <button class="button is-info" type="submit" id="search-btn">Search</button>
                     </div>
                 </div>
 
@@ -47,10 +48,18 @@
                             <span id="city">City Name</span>
                             <span id="currentDate">MM/DD/YY</span>
                         </h2>
-                        <p class="content" id="temp">Temp:</p>
-                        <p class="content" id="wind">Wind:</p>
-                        <p class="content" id="humidity">Humidity:</p>
-                        <p class="content" id="uv">UV Index:</p>
+                        <p class="content">Temp:
+                            <span id="temp"></span>
+                        </p>
+                        <p class="content">Wind:
+                            <span id="wind"></span>
+                        </p>
+                        <p class="content">Humidity:
+                            <span id="humidity"></span>
+                        </p>
+                        <p class="content">UV-Index:
+                            <span id="uv"></span>
+                        </p>
                     </div>
 
                 </div>
