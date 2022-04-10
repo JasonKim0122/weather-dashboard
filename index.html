@@ -17,11 +17,11 @@
     <div class="container">
         
         <section class="columns">
-            <div class="column">
+            <div class="column card" id="search-body">
                 <!-- Search -->
                 <div class="search field has-addons">
                     <div class="control">
-                        <input class="input" type="text" placeholder="Search">
+                        <input class="input" type="text" placeholder="Search for a City">
                     </div>
                     <div class="control">
                         <a class="button is-info">Search</a>
@@ -30,25 +30,111 @@
 
                 <!-- recent search -->
                 <div class="recent">
-                    <div class="recent-search">RECENT</div>
-
+                    <div>
+                        <h2 class="recent-search">Recent Search</h2>
+                    </div>
+                    <div id="recent-info">
+                        <li id="searchedCity">Recent Search Here</li>
+                    </div>
                 </div>
             </div>
 
             <div class="column">
                 <!-- Location Input-->
-                <div class="location">
-                    <div class="location-info">TEXAS</div>
+                <div class="location card">
+                    <div class="location-info card-content">
+                        <h2 class="content">
+                            <span id="city">City Name</span>
+                            <span id="currentDate">MM/DD/YY</span>
+                        </h2>
+                        <p class="content" id="temp">Temp:</p>
+                        <p class="content" id="wind">Wind:</p>
+                        <p class="content" id="humidity">Humidity:</p>
+                        <p class="content" id="uv">UV Index:</p>
+                    </div>
 
-                </div>
-                <!-- Forecast -->
-                <div class="forecast">
-                    <div class="weekly">5-day</div>
                 </div>
             </div>
         </section>
+        <!-- Forecast -->
+        <div class="forecast card">
+            <div class="weekly card-content">
+                <h2 id="5-day">5-day Forecast</h2>
+            </div>
+            <div class="columns" id="forecast-info">
+                <div class="card-body">
+                    <h3 class="card-content" id="day1">MM/DD/YY</h3>
+                    <div class="weather-icon">
+                        <img class="weather-img" id="weatherIcon1" src="">
+                    </div>
+                    <p>Temp:
+                        <span id="tempDay1">--</span>
+                    </p>
+                    <p>Humidity:
+                        <span id="humidityDay1">--</span>
+                    </p>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-content" id="day2">MM/DD/YY</h3>
+                    <div class="weather-icon">
+                        <img class="weather-img" id="weatherIcon2" src="">
+                    </div>
+                    <p>Temp:
+                        <span id="tempDay2">--</span>
+                    </p>
+                    <p>Humidity:
+                        <span id="humidityDay2">--</span>
+                    </p>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-content" id="day3">MM/DD/YY</h3>
+                    <div class="weather-icon">
+                        <img class="weather-img" id="weatherIcon3" src="">
+                    </div>
+                    <p>Temp:
+                        <span id="tempDay3">--</span>
+                    </p>
+                    <p>Humidity:
+                        <span id="humidityDay3">--</span>
+                    </p>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-content" id="day4">MM/DD/YY</h3>
+                    <div class="weather-icon">
+                        <img class="weather-img" id="weatherIcon4" src="">
+                    </div>
+                    <p>Temp:
+                        <span id="tempDay4">--</span>
+                    </p>
+                    <p>Humidity:
+                        <span id="humidityDay4">--</span>
+                    </p>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-content" id="day5">MM/DD/YY</h3>
+                    <div class="weather-icon">
+                        <img class="weather-img" id="weatherIcon5" src="">
+                    </div>
+                    <p>Temp:
+                        <span id="tempDay5">--</span>
+                    </p>
+                    <p>Humidity:
+                        <span id="humidityDay5">--</span>
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
-
+    <footer>
+        <div class="description">
+            <h2>Description</h2>
+        </div>
+        <div class="card">
+            <div class="card-body description-content">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta ipsam fugit ipsum labore ad aliquam, nemo distinctio. Repudiandae magnam illum pariatur natus corporis doloribus libero numquam, animi ad totam. Impedit!</p>
+            </div>
+        </div>
+    </footer>
     <script src="./assets/js/script.js"></script>
 </body>
 </html>
