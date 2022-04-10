@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+}
+
+
+:root {
+    --primary-color: #00c8ff; 
+    --secondary-color: #fbb0f1; 
+    --tertiary-color: #000000; 
+}
+
+body {
+    background-color: var(--secondary-color);
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: var(--primary-color);
+    padding: 20px;
+}
+
+.search {
+    padding: 20px;
+}
+
+.recent {
+    padding: 20px;
+}
+
+.location-info {
+    padding: 20px;
+}
+
+.weekly {
+    padding: 20px;
+}
+
+.columns {
+    padding: 40px 20px;
+}

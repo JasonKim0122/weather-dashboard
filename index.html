@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/bulma/bulma.css">
+</head>
+<body>
+    <header class="main">
+        <h1 class="title">Weather Dashboard</h1>
+    </header>
+    
+    <!-- Container -->
+    <div class="container">
+        
+        <section class="columns">
+            <div class="column">
+                <!-- Search -->
+                <div class="search field has-addons">
+                    <div class="control">
+                        <input class="input" type="text" placeholder="Search">
+                    </div>
+                    <div class="control">
+                        <a class="button is-info">Search</a>
+                    </div>
+                </div>
+
+                <!-- recent search -->
+                <div class="recent">
+                    <div class="recent-search">RECENT</div>
+
+                </div>
+            </div>
+
+            <div class="column">
+                <!-- Location Input-->
+                <div class="location">
+                    <div class="location-info">TEXAS</div>
+
+                </div>
+                <!-- Forecast -->
+                <div class="forecast">
+                    <div class="weekly">5-day</div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
