@@ -9,6 +9,10 @@ var cityInputEl = document.getElementById("city");
 var dateInputEl = document.getElementById("currentDate");
 var searchFormEl = document.querySelector(".search");
 var searchBtnEl = document.getElementById("search-btn");
+var totalCities = 6;
+
+//Array
+savedCityArr = [];
 
 //Function for getting info from API
 function getWeather (cityLookUp) {
@@ -24,7 +28,7 @@ function getWeather (cityLookUp) {
                 //displaying date along with city
                 var currentTime = response.dt;
                 var currentDate = moment.unix(currentTime).format("MM/DD/YY");
-                dateInputEl.innherHTML = currentDate;
+                dateInputEl.innerHTML = currentDate;
 
                 //displaying info
                 var currentTemp =document.getElementById("temp");
@@ -34,7 +38,7 @@ function getWeather (cityLookUp) {
                 currentWind.innerHTML =(response.wind.speed + " MPH");
 
                 var currentHumidity= document.getElementById("humidity");
-                currentHumidity.innherHTML = response.current.humidity;
+                currentHumidity.innerHTML = response.main.humidity;
 
                 //need coordinates to call UV index correctly
                 var lat = response.coord.lat;
@@ -62,7 +66,7 @@ function getForecast (lat, lon) {
             var currentDate = moment.unix(currentTime).format("MM/DD/YY");
 
             var dayEl = document.getElementById("day" + i);
-            dayEl.innherHTML= currentDate; 
+            dayEl.innerHTML= currentDate; 
 
             //displaying weather pic
             var iconForWeatherUrl = "http://openweathermap.org/img/wn/" + response.daily[i].weather[0].icon + "@2x.png";
@@ -94,19 +98,57 @@ function getUVIndex (lat, lon) {
 
 
 //Creating buttons for recent search so user can easily click back 
+function createSavedDropDown () {
+    var createNewOption = document.createElement("option");
+    createNewOption.classList.add("select", "savedCityName");
+    createNewOption.innerHTML = JSON.parse(localStorage.getItem("cityData", savedCityArr));
 
+    searchedCitiesEl.appendChild(createNewOption);
+}
 
 
 
 
 //Save to localStorage
+function saveCity (cityLookUp) {
+    var savedCities = 0;
+    savedCityArr = JSON.parse(localStorage.getItem("cityData"));
+    if (savedCityArr === null) {
+        savedCityArr = [];
+        savedCityArr.unshift(cityLookUp);
+    } else {
+        for (var i = 0; i < savedCityArr.length; i++) {
+            if (cityLookUp.toLowerCase() === savedCityArr[i].toLowerCase()) {
+                return savedCities;
+            }
+        }
+    }
+    if (savedCityArr.length < totalCities) {
+        savedCityArr.unshift(cityLookUp);
+    } else {
+        savedCityArr.pop();
+        savedCityArr.unshift(cityLookUp);
+    }
+    localStorage.setItem("cityData",JSON.stringify(savedCityArr));
+    savedCities = 0;
 
+    return savedCities; 
+}
 
 
 
 
 //Load localStorage
+function loadCities () {
+    savedCityArr = JSON.parse(localStorage.getItem("cityData"));
+    if (savedCityArr === null) {
+        savedCityArr = [];
+    }
 
+    for (var i = 0; i < savedCityArr.length; i++) {
+        createSavedDropDown(savedCityArr[i]);
+    }
+}
 
 
 
@@ -115,9 +157,17 @@ function getUVIndex (lat, lon) {
 //Event Handlers
 function searchFormHandler (event) {
     var cityLookUp = document.getElementById("search-input").value;
-    getWeather(cityLookUp); 
+
+    var savedCities = saveCity(cityLookUp);
+    getWeather(cityLookUp) 
+    if (savedCities === 1) {
+        createSavedDropDown();
+    }
+    
 };
 
 searchBtnEl.addEventListener("click",function(event) {
     searchFormHandler(event);
 });
+
+loadCities();

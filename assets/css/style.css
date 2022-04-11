@@ -1,5 +1,7 @@
 * {
     box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
 }
 
 
@@ -50,7 +52,7 @@ header {
 }
 
 #recent-info {
-    padding: 40px;
+    padding: 20px;
 }
 
 .location-info {
